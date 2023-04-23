@@ -18,13 +18,13 @@ function httpServer(req, res) {
 		res.end(JSON.stringify(read('users')));
 	});
 
-	app.post('users', (req, res) => {
+	app.post('/users', (req, res) => {
 		let str = '';
 		req.on('data', (chunk) => (str += chunk));
 		req.on('end', () => {
-			let user = read('users');
+			const user = read('users');
 			let { username, contact } = JSON.parse(str);
-			let newUser = { userId: user.at(-1)?.userId + 1 || 1, username, contact };
+			const newUser = { userId: user.at(-1)?.userId + 1 || 1, username, contact };
 
 			user.push(newUser);
 			write('users', user);

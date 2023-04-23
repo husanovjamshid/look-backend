@@ -1,12 +1,32 @@
 [
-	{
-		"userId": 1,
-		"username": "Jamshid",
-		"contact": 998994454910
-	},
-	{
-		"userId": 2,
-		"username": "Nodir",
-		"contact": 998994108072
-	}
+    {
+        "userId": 1,
+        "username": "Jamshid",
+        "contact": "998994454910"
+    },
+    {
+        "userId": 2,
+        "username": "Nodir",
+        "contact": "998994108072"
+    },
+    {
+        "userId": 3,
+        "username": "Jurat",
+        "contact": "998904421025"
+    },
+    {
+        "userId": 4,
+        "username": "Doston",
+        "contact": "998995154455"
+    },
+    {
+        "userId": 5,
+        "username": "Eldor",
+        "contact": "998915147121"
+    },
+    {
+        "userId": 6,
+        "username": "Shohruh",
+        "contact": "99893541214"
+    }
 ]
