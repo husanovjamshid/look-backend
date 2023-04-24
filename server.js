@@ -75,21 +75,12 @@ function httpServer(req, res) {
 			const newOrder = { userId, foodId, count };
 			// console.log(orders);
 			let refleks = orders.filter(
-				(item) => item.foodId == foodId && item.userId && userId,
+				(item) => item.foodId == foodId && item.userId == userId,
 			);
 			console.log(refleks);
 			if (refleks.length > 0) {
-				refleks.length = 0;
-
-				// console.log('new ' + newOrder.count);
-				// console.log('ref ' + refleks[0].count);
-				// console.log(newOrder.foodId);
+				// refleks.length = 0;
 				const orders = read('orders');
-				// console.log('New Order' + ' ' + newOrder.userId);
-				// let newUser = data.filter(
-				// 	(item) => item.userId == newOrder.userId && item.foodId == newOrder.foodId,
-				// );
-				// newUser[0].count = 1;
 
 				orders
 					.filter(
@@ -99,11 +90,11 @@ function httpServer(req, res) {
 					.map((item) => (item.count += newOrder.count)),
 					write('orders', orders);
 			} else {
-				refleks.length = 0;
+				// refleks.length = 0;
 				orders.push(newOrder);
 				write('orders', orders);
 			}
-			// console.log(refleks);
+			// refleks.length = 0;
 
 			res.writeHead(201, { 'Content-Type': 'application/json' });
 			res.end(JSON.stringify({ status: 201, success: true }));
