@@ -18,5 +18,10 @@
         "userId": "2",
         "foodId": "1",
         "count": 3
+    },
+    {
+        "userId": "1",
+        "foodId": "7",
+        "count": 5
     }
 ]

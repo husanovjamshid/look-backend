@@ -75,11 +75,19 @@ function httpServer(req, res) {
 			const newOrder = { userId, foodId, count };
 			// console.log(orders);
 			let refleks = orders.filter((item) => item.foodId == foodId);
-			console.log(refleks);
+			// console.log(refleks);
 			if (refleks.length == 0) {
 				orders.push(newOrder);
 			} else {
-				console.log(refleks[0].count);
+				// console.log(refleks[0].count);
+				newOrder.count = newOrder.count + refleks[0].count;
+				console.log(newOrder.foodId);
+				const data = read('orders');
+				// console.log('New Order' + ' ' + newOrder.userId);
+				let newUser = data.filter(
+					(item) => item.userId == newOrder.userId && item.foodId == newOrder.foodId,
+				);
+				newUser[0].count = 1;
 			}
 
 			write('orders', orders);
