@@ -1,27 +1,22 @@
 [
     {
         "userId": "1",
-        "foodId": "5",
-        "count": 3
-    },
-    {
-        "userId": "2",
-        "foodId": "4",
-        "count": 3
-    },
-    {
-        "userId": "2",
-        "foodId": "4",
-        "count": 2
-    },
-    {
-        "userId": "2",
         "foodId": "1",
-        "count": 3
+        "count": 25
     },
     {
         "userId": "1",
         "foodId": "7",
         "count": 5
+    },
+    {
+        "userId": "1",
+        "foodId": "6",
+        "count": 3
+    },
+    {
+        "userId": "2",
+        "foodId": "4",
+        "count": 16
     }
 ]
