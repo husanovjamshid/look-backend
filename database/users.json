@@ -1,12 +1,17 @@
 [
     {
         "userId": 1,
-        "username": "Doston",
-        "contact": "998937681515"
+        "username": "Jamshid",
+        "contact": "998994454910"
     },
     {
         "userId": 2,
-        "username": "Eldor",
-        "contact": "998917125141"
+        "username": "Akbar",
+        "contact": "9989955452"
+    },
+    {
+        "userId": 3,
+        "username": "Shohruh",
+        "contact": "998995545641"
     }
 ]

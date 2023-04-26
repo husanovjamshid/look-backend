@@ -7,10 +7,6 @@ function httpServer(req, res) {
 	let app = new Express(req, res);
 
 	app.get('/foods', (req, res) => {
-		// res.setHeader('Content-Type', 'application/json');
-		// res.setHeader('Access-Control-Allow-Origin', '*');
-		// res.end(JSON.stringify(read('foods')));
-
 		const data = read('foods');
 
 		const { foodId } = req.query;
@@ -34,8 +30,6 @@ function httpServer(req, res) {
 	});
 
 	app.get('/orders', (req, res) => {
-		// console.log(req.query);
-
 		const data = read('orders');
 
 		const { userId } = req.query;
@@ -73,15 +67,10 @@ function httpServer(req, res) {
 			res.setHeader('Access-Control-Allow-Origin', '*');
 
 			const newOrder = { userId, foodId, count };
-			// console.log(orders);
 			let refleks = orders.filter(
 				(item) => item.foodId == foodId && item.userId == userId,
 			);
-			console.log(refleks);
 			if (refleks.length > 0) {
-				// refleks.length = 0;
-				const orders = read('orders');
-
 				orders
 					.filter(
 						(item) =>
@@ -90,11 +79,9 @@ function httpServer(req, res) {
 					.map((item) => (item.count += newOrder.count)),
 					write('orders', orders);
 			} else {
-				// refleks.length = 0;
 				orders.push(newOrder);
 				write('orders', orders);
 			}
-			// refleks.length = 0;
 
 			res.writeHead(201, { 'Content-Type': 'application/json' });
 			res.end(JSON.stringify({ status: 201, success: true }));
